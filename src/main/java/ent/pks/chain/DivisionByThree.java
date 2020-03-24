@@ -7,11 +7,11 @@ public class DivisionByThree implements LevelChain {
         this.chain = nextChain;
     }
 
-    public void separation(NumberFromArray numberFromArray) {
+    public void separation(NumberFromArray numberFromArray) throws NotOurNumber {
         if (numberFromArray.getNumber() % 3 == 0) {
             System.out.println("You are on the third line. It's our number");
         } else {
-            throw new RuntimeException("WTF! Something wrong!");
+            throw new NotOurNumber("WTF! Something wrong!");
         }
     }
 }

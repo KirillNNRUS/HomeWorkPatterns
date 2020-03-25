@@ -1,4 +1,6 @@
-package ent.pks.chain;
+package ent.pks.chain.chain;
+
+import ent.pks.chain.exceptions.NotOurNumber;
 
 public interface LevelChain {
     void setNextChain(LevelChain nextChain);

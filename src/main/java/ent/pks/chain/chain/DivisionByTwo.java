@@ -1,4 +1,6 @@
-package ent.pks.chain;
+package ent.pks.chain.chain;
+
+import ent.pks.chain.exceptions.NotOurNumber;
 
 public class DivisionByTwo implements LevelChain {
     private LevelChain chain;

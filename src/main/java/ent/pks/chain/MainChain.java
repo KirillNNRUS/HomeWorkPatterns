@@ -1,5 +1,8 @@
 package ent.pks.chain;
 
+import ent.pks.chain.chain.*;
+import ent.pks.chain.exceptions.NotOurNumber;
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;

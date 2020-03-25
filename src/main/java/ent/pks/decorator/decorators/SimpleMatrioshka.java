@@ -1,4 +1,4 @@
-package ent.pks.decorator;
+package ent.pks.decorator.decorators;
 
 public class SimpleMatrioshka implements IMatrioshka {
     public String decorate() {

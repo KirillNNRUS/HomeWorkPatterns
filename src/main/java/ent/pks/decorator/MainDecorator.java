@@ -1,5 +1,7 @@
 package ent.pks.decorator;
 
+import ent.pks.decorator.decorators.*;
+
 public class MainDecorator {
     public static void main(String[] args) {
         IMatrioshka matrioshka = new SimpleMatrioshka();

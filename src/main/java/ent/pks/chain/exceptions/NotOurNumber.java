@@ -1,4 +1,4 @@
-package ent.pks.chain;
+package ent.pks.chain.exceptions;
 
 public class NotOurNumber extends Exception{
     public NotOurNumber() {

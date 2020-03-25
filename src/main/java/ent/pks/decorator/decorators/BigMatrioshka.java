@@ -1,4 +1,4 @@
-package ent.pks.decorator;
+package ent.pks.decorator.decorators;
 
 public class BigMatrioshka extends MatrioshkaDecorator {
 

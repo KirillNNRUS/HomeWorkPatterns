@@ -1,11 +1,18 @@
 package ent.pks.prototype;
 
-public class Planet extends APlanet{
-    public void addCreature(ICreature creature) {
+import java.util.ArrayList;
 
+public class Planet extends APlanet {
+
+    public Planet() {
+        creatures = new ArrayList<ICreature>();
+    }
+
+    public void addCreature(ICreature creature) {
+        creatures.add(creature);
     }
 
     public long getPopulation() {
-        return 0;
+        return creatures.size();
     }
 }

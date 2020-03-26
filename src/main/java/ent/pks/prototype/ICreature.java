@@ -1,7 +1,9 @@
 package ent.pks.prototype;
 
 public interface ICreature {
-    void getName(); // имя
+    String getName(); // имя
 
-    ICreature clone(); // сделать клона
+    void setName(String name);
+
+    ICreature copy(); // сделать клона
 }

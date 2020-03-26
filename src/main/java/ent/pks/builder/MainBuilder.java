@@ -14,5 +14,16 @@ public class MainBuilder {
                 new Recipient.RecipientBuilder("user3@server.com").setName("user3").build());
         EmailMessage emailMessage = emailMessageBuilder.getEmailMessage();
         System.out.println(emailMessage);
+        System.out.println("==========");
+
+        EmailServer emailServer = new EmailServer(emailMessage);
+        emailServer.send();
+        System.out.println("==========");
+
+        emailServer.receive(new EmailMessage(), "user2@server.com");
+        System.out.println("==========");
+        emailServer.receive(emailMessage, "user3@server.com");
+        System.out.println("==========");
+        emailServer.receive(emailMessage, "user7@server.com");
     }
 }

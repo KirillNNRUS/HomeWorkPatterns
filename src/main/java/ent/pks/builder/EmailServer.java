@@ -31,7 +31,7 @@ public class EmailServer {
         for (Recipient r : emailMessage.getRecipientsMessage()) {
             if (r.getAddress().equalsIgnoreCase(address)) {
                 System.out.println("Вам пришло письмо от " + emailMessage.getSender().toString());
-                System.out.println("Тема: " + emailMessage.subject);
+                System.out.println("Тема: " + emailMessage.getSubject());
                 System.out.println("Текст письма: " + emailMessage.getBody());
 
                 return;

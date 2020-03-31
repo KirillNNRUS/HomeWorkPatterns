@@ -1,13 +1,9 @@
 package ent.pks.prototype;
 
-import lombok.EqualsAndHashCode;
-
-@EqualsAndHashCode
 public class Creature extends ACreature {
     public Creature(String name) {
         super();
         super.name = name;
-
     }
 
     public String getName() {
@@ -19,8 +15,7 @@ public class Creature extends ACreature {
     }
 
     public ICreature copy() {
-        Creature copy = new Creature(name);
-        return copy;
+        return new Creature(name);
     }
 
     @Override

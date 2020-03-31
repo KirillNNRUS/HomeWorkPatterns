@@ -1,10 +1,5 @@
 package ent.pks.builder;
 
-import lombok.Getter;
-import lombok.ToString;
-
-@Getter
-@ToString
 public class Recipient {
     private final String name;
     private final String address;
@@ -14,7 +9,22 @@ public class Recipient {
         this.address = recipientBuilder.address;
     }
 
-    //найденный мною способ, через внутренний статический класс
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    @Override
+    public String toString() {
+        return "Recipient{" +
+                "name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                '}';
+    }
+
     public static class RecipientBuilder {
         private String name;
         private final String address;

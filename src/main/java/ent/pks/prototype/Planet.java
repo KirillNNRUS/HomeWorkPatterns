@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Planet extends APlanet {
 
     public Planet() {
-        creatures = new ArrayList<ICreature>();
+        creatures = new ArrayList<>();
     }
 
     public void addCreature(ICreature creature) {

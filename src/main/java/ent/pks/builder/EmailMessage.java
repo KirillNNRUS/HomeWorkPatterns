@@ -1,18 +1,40 @@
 package ent.pks.builder;
 
-import lombok.Getter;
-import lombok.ToString;
-
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-@Getter
-@ToString
 public class EmailMessage {
     private final List<Recipient> recipientsMessage; // получатели
     private final Recipient sender; // отправитель
     private final String body; // текст письма
     private final String subject; // тема письма
+
+    public List<Recipient> getRecipientsMessage() {
+        return recipientsMessage;
+    }
+
+    public Recipient getSender() {
+        return sender;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    @Override
+    public String toString() {
+        return "EmailMessage{" +
+                "recipientsMessage=" + recipientsMessage +
+                ", sender=" + sender +
+                ", body='" + body + '\'' +
+                ", subject='" + subject + '\'' +
+                '}';
+    }
 
     private EmailMessage(EmailMessageBuilder emailMessageBuilder) {
         this.recipientsMessage = emailMessageBuilder.recipientsMessage;
@@ -29,9 +51,7 @@ public class EmailMessage {
 
         public EmailMessageBuilder setRecipientsMessage(Recipient... recipients) {
             ArrayList<Recipient> recipientArrayList = new ArrayList<>();
-            for (Recipient r : recipients) {
-                recipientArrayList.add(r);
-            }
+            Collections.addAll(recipientArrayList, recipients);
             this.recipientsMessage = recipientArrayList;
             return this;
         }

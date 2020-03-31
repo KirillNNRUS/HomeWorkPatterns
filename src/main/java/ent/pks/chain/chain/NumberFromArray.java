@@ -1,10 +1,13 @@
 package ent.pks.chain.chain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
-@Getter
-@AllArgsConstructor
 public class NumberFromArray {
-    private int number;
+    private final int number;
+
+    public int getNumber() {
+        return number;
+    }
+
+    public NumberFromArray(int number) {
+        this.number = number;
+    }
 }

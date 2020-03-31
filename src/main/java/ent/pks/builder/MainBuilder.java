@@ -1,9 +1,11 @@
 package ent.pks.builder;
 
+import static java.lang.System.*;
+
 public class MainBuilder {
     public static void main(String[] args) {
         Recipient recipient = new Recipient.RecipientBuilder("user@server.com").setName("user").build();
-        System.out.println(recipient);
+        out.println(recipient);
 
         EmailMessage emailMessage = new EmailMessage.EmailMessageBuilder()
                 .setRecipientsMessage(
@@ -18,12 +20,16 @@ public class MainBuilder {
 
         EmailServer emailServer = new EmailServer(emailMessage);
         emailServer.send();
-        System.out.println("==========");
+        printLine();
 
         emailServer.receive(new EmailMessage.EmailMessageBuilder().build(), "user2@server.com");
-        System.out.println("==========");
+        printLine();
         emailServer.receive(emailMessage, "user3@server.com");
-        System.out.println("==========");
+        printLine();
         emailServer.receive(emailMessage, "user7@server.com");
+    }
+
+    static void printLine() {
+        out.println("==========");
     }
 }

@@ -2,6 +2,8 @@ package ent.pks.chain.chain;
 
 import ent.pks.chain.exceptions.NotOurNumber;
 
+import static java.lang.System.out;
+
 public class DivisionByTwo implements LevelChain {
     private LevelChain chain;
 
@@ -11,9 +13,9 @@ public class DivisionByTwo implements LevelChain {
 
     public void separation(NumberFromArray numberFromArray) throws NotOurNumber {
         if (numberFromArray.getNumber() % 2 == 0) {
-            System.out.println("Second line! It's even number!");
+            out.println("Second line! It's even number!");
         } else {
-            System.out.println("Go to third line.");
+            out.println("Go to third line.");
             this.chain.separation(numberFromArray);
         }
     }

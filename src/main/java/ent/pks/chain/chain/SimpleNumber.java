@@ -2,6 +2,8 @@ package ent.pks.chain.chain;
 
 import ent.pks.chain.exceptions.NotOurNumber;
 
+import static java.lang.System.*;
+
 public class SimpleNumber implements LevelChain {
     private LevelChain chain;
 
@@ -10,11 +12,11 @@ public class SimpleNumber implements LevelChain {
     }
 
     public void separation(NumberFromArray numberFromArray) throws NotOurNumber {
-        System.out.println("First line is here.");
+        out.println("First line is here.");
         if (isPrime(numberFromArray.getNumber())) {
-            System.out.println("Is Prime number");
+            out.println("Is Prime number");
         } else {
-            System.out.println("Go to second line.");
+            out.println("Go to second line.");
             this.chain.separation(numberFromArray);
         }
     }

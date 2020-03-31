@@ -2,10 +2,12 @@ package ent.pks.prototype;
 
 import java.util.Random;
 
+import static java.lang.System.out;
+
 public class MainPrototype {
 
     public static final long MAX_CREATURES = 100;
-    public static Random random = new Random();
+    public static final Random random = new Random();
 
     public static void main(String[] args) {
 
@@ -24,8 +26,8 @@ public class MainPrototype {
             planet.addCreature(copy);
         }
 
-        System.out.println(planet.getPopulation());
-        System.out.println(planet.creatures.toString());
+        out.println(planet.getPopulation());
+        out.println(planet.creatures.toString());
     }
 
     public static String randomStringGenerate() {
@@ -34,11 +36,9 @@ public class MainPrototype {
         int rightLimit = 122; // letter 'z'
         int targetStringLength = (int) MAX_CREATURES;
 
-        String generatedString = random.ints(leftLimit, rightLimit + 1)
+        return random.ints(leftLimit, rightLimit + 1)
                 .limit(targetStringLength)
                 .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
                 .toString();
-
-        return generatedString;
     }
 }
